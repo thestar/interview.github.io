@@ -251,30 +251,30 @@ function getRandomArrayElements(arr, count) {
 }
 
 // 当点击Start interview时触发
-$('.startInterview').click(function () {
-    // 若已选择岗位和难度，弹窗小时
-    if(type && difficulty){
-        $('.bgBox').addClass('none');
-        $('.practiceBox').addClass('none');
-    }
-    // 若无选择，则弹出提示
-    else{
-        alert('Please select information!')
-    }
-    // 对默认题库进行遍历，匹配与用户选择的岗位相同的题库
-    for(var i = 0;i<data.length;i++){
-        if(type == data[i].type){
-            title = data[i].title;
-            for(var t = 0;t<data[i].list.length;t++){
-                questionList.push(data[i].list[t]);
-            }
-            commonList = getRandomArrayElements(questionList, 11);
-            var html = '<div class="about-content"><h3 class="title">'+title+'</h3><p>'+'1.'+commonList[1].text+'</p>';
-            $(".answerArea").html('');
-            $(".answerArea").append(html);
-        }
-    }
-})
+// $('.startInterview').click(function () {
+//     // 若已选择岗位和难度，弹窗小时
+//     if(type && difficulty){
+//         $('.bgBox').addClass('none');
+//         $('.practiceBox').addClass('none');
+//     }
+//     // 若无选择，则弹出提示
+//     else{
+//         alert('Please select information!')
+//     }
+//     // 对默认题库进行遍历，匹配与用户选择的岗位相同的题库
+//     for(var i = 0;i<data.length;i++){
+//         if(type == data[i].type){
+//             title = data[i].title;
+//             for(var t = 0;t<data[i].list.length;t++){
+//                 questionList.push(data[i].list[t]);
+//             }
+//             commonList = getRandomArrayElements(questionList, 11);
+//             var html = '<div class="about-content"><h3 class="title">'+title+'</h3><p>'+'1.'+commonList[1].text+'</p>';
+//             $(".answerArea").html('');
+//             $(".answerArea").append(html);
+//         }
+//     }
+// })
 
 
 
@@ -300,6 +300,10 @@ function restart (){
     $(".answerArea").append(html);
 };
 
+setInterval(function working(){
+    nextQuest();
+},180000);
+
 function nextQuest(){
     for(num<commonList.length+1;num++;){
         console.log(num,'time')
@@ -316,7 +320,7 @@ function finishQuest(){
     if(num<commonList.length){
         alert('Please finish 10 questions!')
     }else{
-        alert('I will send your answer and your video to the teacher! Good luck!')
+        alert("I will send your answer and your video to the teacher's E-mail! Good luck!")
         window.location.reload();
     }
 };
@@ -325,26 +329,27 @@ function finishQuest(){
 // console.log( getRandomArrayElements(items, 4) );
 
 // video
-let video = document.getElementById("video");
-function getMedia() {
-    let constraints = {
-        video: {width: 500, height: 500},
-        audio: true
-    };
-    let promise = navigator.mediaDevices.getUserMedia(constraints);
-    promise.then(function (MediaStream) {
-        video.srcObject = MediaStream;
-        video.play();
-    }).catch(function (PermissionDeniedError) {
-        console.log(PermissionDeniedError);
-    })
-}
-function takePhoto() {
-    let canvas = document.getElementById("canvas");
-    let ctx = canvas.getContext('2d');
-    ctx.drawImage(video, 0, 0, 500, 500);
-}
+// let video = document.getElementById("video");
+// function getMedia() {
+//     let constraints = {
+//         video: {width: 500, height: 500},
+//         audio: true
+//     };
+//     let promise = navigator.mediaDevices.getUserMedia(constraints);
+//     promise.then(function (MediaStream) {
+//         video.srcObject = MediaStream;
+//         video.play();
+//     }).catch(function (PermissionDeniedError) {
+//         console.log(PermissionDeniedError);
+//     })
+// }
+// function takePhoto() {
+//     let canvas = document.getElementById("canvas");
+//     let ctx = canvas.getContext('2d');
+//     ctx.drawImage(video, 0, 0, 500, 500);
+// }
 
+var istyrInterview = localStorage.getItem('istyrInterview')?localStorage.getItem('istyrInterview'):false;
 function tyrInterview(){
     let constraints = {
         video: {width: 500, height: 500},
@@ -357,5 +362,214 @@ function tyrInterview(){
     }).catch(function (PermissionDeniedError) {
         // console.log(PermissionDeniedError);
     })
+    istyrInterview = true;
+    localStorage.setItem("istyrInterview",istyrInterview);
+    console.log(istyrInterview,'istyrInterview')
 }
 
+
+if(istyrInterview == true){
+    console.log(333000)
+    $('.tryPractiice').addClass('none');
+}
+
+  var mediaStream;
+            var recorderFile;
+            var stopRecordCallback;
+            var openBtn = document.getElementById("openCamera");
+            var startBtn = document.getElementById("start-recording");
+            var saveBtn = document.getElementById("save-recording");
+            openBtn.onclick = function() {
+                // 若已选择岗位和难度，弹窗小时
+    if(type && difficulty){
+        $('.openbgBox').addClass('none');
+        $('.opnepracticeBox').addClass('none');
+ this.disabled = true;
+                startBtn.disabled=false;
+                openCamera();
+    }
+//     // 若无选择，则弹出提示
+    else{
+        alert('Please select information!')
+    }
+    // 对默认题库进行遍历，匹配与用户选择的岗位相同的题库
+    for(var i = 0;i<data.length;i++){
+        if(type == data[i].type){
+            title = data[i].title;
+            for(var t = 0;t<data[i].list.length;t++){
+                questionList.push(data[i].list[t]);
+            }
+            commonList = getRandomArrayElements(questionList, 11);
+            var html = '<div class="about-content"><h3 class="title">'+title+'</h3><p>'+'1.'+commonList[1].text+'</p>';
+            $(".answerArea").html('');
+            $(".answerArea").append(html);
+        }
+    }
+            };
+
+            startBtn.onclick = function() {
+                this.disabled = true;
+                startRecord();
+            };
+
+            saveBtn.onclick = function() {
+                saver();
+
+                // alert('Drop WebM file on Chrome or Firefox. Both can play entire file. VLC player or other players may not work.');
+            };
+
+            var mediaRecorder;
+            var videosContainer = document.getElementById('videos-container');
+
+            function openCamera(){
+                var len = videosContainer.childNodes.length;
+                for(var i=0;i<len;i++){
+                    videosContainer.removeChild(videosContainer.childNodes[i]);
+                }
+
+                var video = document.createElement('video');
+
+                var videoWidth = 570;
+                var videoHeight = 570;
+
+                video.controls = false;
+                video.muted = true;
+                video.width = videoWidth;
+                video.height = videoHeight;
+                MediaUtils.getUserMedia(true, false, function (err, stream) {
+                    if (err) {
+                        throw err;
+                    } else {
+                        // 通过 MediaRecorder 记录获取到的媒体流
+                        console.log();
+                        mediaRecorder = new MediaRecorder(stream);
+                        mediaStream = stream;
+                        var chunks = [], startTime = 0;
+                        video.srcObject = stream;
+                        video.play();
+
+                        videosContainer.appendChild(video);
+                        mediaRecorder.ondataavailable = function(e) {
+                            mediaRecorder.blobs.push(e.data);
+                            chunks.push(e.data);
+                        };
+                        mediaRecorder.blobs = [];
+
+                        mediaRecorder.onstop = function (e) {
+                            recorderFile = new Blob(chunks, { 'type' : mediaRecorder.mimeType });
+                            chunks = [];
+                            if (null != stopRecordCallback) {
+                                stopRecordCallback();
+                            }
+                        };
+                }
+            });
+            }
+
+            // 停止录制
+            function stopRecord(callback) {
+                stopRecordCallback = callback;
+                // 终止录制器
+                mediaRecorder.stop();
+                // 关闭媒体流
+                MediaUtils.closeStream(mediaStream);
+            }
+
+            var MediaUtils = {
+                /**
+                * 获取用户媒体设备(处理兼容的问题)
+                * @param videoEnable {boolean} - 是否启用摄像头
+                * @param audioEnable {boolean} - 是否启用麦克风
+                * @param callback {Function} - 处理回调
+                */
+                getUserMedia: function (videoEnable, audioEnable, callback) {
+                    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia
+                    || navigator.msGetUserMedia || window.getUserMedia;
+                    var constraints = {video: videoEnable, audio: audioEnable};
+                    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                        navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+                        callback(false, stream);
+                    })['catch'](function(err) {
+                        callback(err);
+                    });
+                    } else if (navigator.getUserMedia) {
+                        navigator.getUserMedia(constraints, function (stream) {
+                        callback(false, stream);
+                    }, function (err) {
+                        callback(err);
+                    });
+                } else {
+                    callback(new Error('Not support userMedia'));
+                }
+            },
+
+                /**
+                * 关闭媒体流
+                * @param stream {MediaStream} - 需要关闭的流
+                */
+                closeStream: function (stream) {
+                    if (typeof stream.stop === 'function') {
+                        stream.stop();
+                    }
+                    else {
+                        let trackList = [stream.getAudioTracks(), stream.getVideoTracks()];
+
+                        for (let i = 0; i < trackList.length; i++) {
+                            let tracks = trackList[i];
+                            if (tracks && tracks.length > 0) {
+                                for (let j = 0; j < tracks.length; j++) {
+                                    let track = tracks[j];
+                                    if (typeof track.stop === 'function') {
+                                        track.stop();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }; 
+
+function startRecord() {
+    mediaRecorder.start();
+    setTimeout(function(){
+        // 结束
+        stopRecord(function() {
+            alert("Time out!Recording successful!");
+            openBtn.disabled=false;
+            saveBtn.disabled=false;
+            //send();
+        });
+    }, 10000);
+}
+
+function saver(){
+    var file = new File([recorderFile], 'msr-' + (new Date).toISOString().replace(/:|\./g, '-') + '.mp4', {
+        type: 'video/mp4'
+    });
+    saveAs(file);
+    $('.emailBox').removeClass('none');
+    $('.emailpracticeBox').removeClass('none');
+}
+
+function send(){
+    var file = new File([recorderFile], 'msr-' + (new Date).toISOString().replace(/:|\./g, '-') + '.mp4', {
+        type: 'video/mp4'
+    });
+    var data = new FormData();
+    data.append("username", "test");
+    data.append("userfile", file);
+
+    var req = new XMLHttpRequest();
+    req.open("POST", "com.spinsoft.bip.frame.utils.image.saveMp4.biz.ext");
+    req.send(data);
+}
+
+$('#sendEmail').click(function(){
+    var email = $('#mail').val().length;
+    if(email!=0){
+        alert('Mail sent successfully!');
+        window.location.href="index.html";
+    }else{
+        alert("Please input the teacher'email!")
+    }
+})

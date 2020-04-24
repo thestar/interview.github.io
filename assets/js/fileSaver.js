@@ -20,8 +20,8 @@ var saveAs = saveAs || (function(view) {
         return;
     }
     var
-        doc = view.document
-        // only get URL when necessary in case Blob.js hasn't overridden it yet
+          doc = view.document
+          // only get URL when necessary in case Blob.js hasn't overridden it yet
         , get_URL = function() {
             return view.URL || view.webkitURL || view;
         }
@@ -79,7 +79,7 @@ var saveAs = saveAs || (function(view) {
             }
             // First try a.download, then web filesystem, then object URLs
             var
-                filesaver = this
+                  filesaver = this
                 , type = blob.type
                 , force = type === force_saveable_type
                 , object_url
@@ -161,17 +161,17 @@ var saveAs = saveAs || (function(view) {
     FS_proto.DONE = 2;
 
     FS_proto.error =
-        FS_proto.onwritestart =
-            FS_proto.onprogress =
-                FS_proto.onwrite =
-                    FS_proto.onabort =
-                        FS_proto.onerror =
-                            FS_proto.onwriteend =
-                                null;
+    FS_proto.onwritestart =
+    FS_proto.onprogress =
+    FS_proto.onwrite =
+    FS_proto.onabort =
+    FS_proto.onerror =
+    FS_proto.onwriteend =
+        null;
 
     return saveAs;
 }(
-    typeof self !== "undefined" && self
+       typeof self !== "undefined" && self
     || typeof window !== "undefined" && window
     || this.content
 ));
@@ -180,9 +180,9 @@ var saveAs = saveAs || (function(view) {
 // with an attribute `content` that corresponds to the window
 
 if (typeof module !== "undefined" && module.exports) {
-    module.exports.saveAs = saveAs;
+  module.exports.saveAs = saveAs;
 } else if ((typeof define !== "undefined" && define !== null) && (define.amd !== null)) {
-    define("FileSaver.js", function() {
-        return saveAs;
-    });
+  define("FileSaver.js", function() {
+    return saveAs;
+  });
 }
