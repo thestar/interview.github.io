@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS
@@ -60,12 +61,12 @@
             <!-- Header Menu Start -->
             <nav id="main-menu" class="main-menu col-lg-auto order-lg-2">
                 <ul>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="cv-writing.html">CV Writing</a></li>
-                        <li><a href="blog.html">Benefits</a></li>
-                        <li><a href="blog.html">Trial Interview</a></li>
-                        <li><a href="blog.html">Watch Interview</a></li>
-                    </ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="cv-writing.html">CV Writing</a></li>
+                    <li class="isLoginTip">Interview Tips</li>
+                    <li  class="isLoginTrial">rial Interview</li>
+                    <li  class="isLoginWatch">Watch Interview</li>
+                </ul>
             </nav>
             <!-- Header Menu End -->
 
@@ -92,41 +93,12 @@
                 <!-- Offcanvas Menu Start -->
                 <div class="offcanvas-menu">
                     <nav>
-                        <ul>
-                            <li class="has-children"><a href="index.html">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Home One</a></li>
-                                    <li><a href="index-2.html">Home Two</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-children"><a href="job-list.html">Jobs</a>
-                                <ul class="sub-menu">
-                                    <li><a href="job-list.html">Job List</a></li>
-                                    <li><a href="job-single.html">Job Single</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="company-list.html">Company</a>
-                                <ul class="sub-menu">
-                                    <li><a href="company-list.html">Company List</a></li>
-                                    <li><a href="company-single.html">Company Single</a></li>
-                                    <li><a href="create-job.html">Create Job</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="faq.html">FAQ'S</a></li>
-                                    <li><a href="pricing.html">Pricing</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="blog.html">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact us</a></li>
+                         <ul>
+                            <li class="has-children"><a href="about-us.html">About Us</a></li>
+                            <li class="has-children"><a href="cv-writing.html">CV Writing</a></li>
+                            <li class="has-children isLoginTip"><a href="javascript:;">Interview Tips</a></li>
+                            <li class="has-children isLoginTrial"><a href="javascript:;">rial Interview</a></li>
+                            <li class="has-children isLoginWatch"><a href="javascript:;">Watch Interview</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -219,10 +191,10 @@
     <div class="page-heading-section section bg-parallax" data-bg-image="assets/images/bg/bg-1.jpg" data-overlay="50">
         <div class="container">
             <div class="page-heading-content text-center">
-                <h3 class="title">Interview Test</h3>
+                <h3 class="title">Trial Interview</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Interview Test</li>
+                    <li class="breadcrumb-item active">Trial Interview</li>
                 </ol>
             </div>
         </div>
@@ -230,8 +202,16 @@
     <!-- Page Heading Section End -->
 
     <!-- About Us Start -->
-    <div class="section section-padding">
-        <div class="container">
+    <div class="section section-padding" >
+        <div class="container"style="border:1px solid red;padding:30px; background: #fff8f8;">
+
+
+
+        <section class="experiment" style="text-align:center;border:none; margin-top:20px;">
+
+            <!--<a href="javascript:void(0)" οnclick="send()">发送</a>-->
+        </section>
+ </article>
             <div class="row mb-n4">
                 <!-- About Content Start -->
                 <div class="col-md-6 col-12 pr-lg-5 align-self-center mb-4">
@@ -243,20 +223,24 @@
                         </p>
                         </div>
                     </div>
-                    <button id="start" onclick="getMedia()" class="interviewBtn questionBtn">Start</button>
+                    <button id="start-recording" class="interviewBtn questionBtn">Start</button>
                     <button id="skip" onclick="skip()" class="interviewBtn questionBtn">Skip</button>
                     <button id="restart" onclick="restart()" class="interviewBtn questionBtn">Restart</button>
                     <button id="next" onclick="nextQuest()" class="interviewBtn questionBtn">Next</button>
-                    <button id="finish" onclick="finishQuest()" class="interviewBtn questionBtn">Finish</button>
+                    <button id="save-recording" class="interviewBtn questionBtn">Finish and Save</button>
                 </div>
                 <!-- About Content End -->
 
                 <!-- About Image Start -->
-                <div class="col-md-6 col-12 mb-4">
-                    <div class="about-image" style="width: 570px;height: 570px; position: relative;">
+                <div class="col-md-6 col-12 mb-4 " id="videoBox">
+                    <div class="about-image" style="width: 100%;height: 570px; position: relative;">
                         <img src="assets/images/others/about-1.jpg" alt="">
-                        <video  style="position: absolute;left:0;top:0;width: 570px;height: 570px;" id="video" width="500px" height="500px" autoplay="autoplay"></video>
-                        <canvas style="position: absolute;left:0;top:0;width: 570px;height: 570px;" id="canvas" width="500px" height="500px"></canvas>
+                         <section class="experiment" style="width: 570px;height: 570px;">
+                            <div id="videos-container" style="position: absolute;left:0;top:0;width: 570px;height: 570px;">
+                            </div>
+                        </section>
+                     <!--    <video  style="position: absolute;left:0;top:0;width: 570px;height: 570px;" id="video" width="500px" height="500px" autoplay="autoplay"></video>
+                        <canvas style="position: absolute;left:0;top:0;width: 570px;height: 570px;" id="canvas" width="500px" height="500px"></canvas> -->
                     </div>
                 </div>
                 <!-- About Image End -->
@@ -266,42 +250,6 @@
     <!-- About Us End -->
 
     <!-- Funfact Section Start -->
-    <div class="section section-padding bg-parallax" data-bg-image="assets/images/bg/bg-3.jpg" data-overlay="50">
-        <div class="container">
-            <div class="funfact-wrap row">
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1354</span>
-                    <span class="title">Job Interviews</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1741</span>
-                    <span class="title">Members</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1204</span>
-                    <span class="title">Resume</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">142</span>
-                    <span class="title">Company</span>
-                </div>
-                <!-- Funfact Start -->
-
-            </div>
-        </div>
-    </div>
-    <!-- Funfact Section End -->
 
     <!-- Team Section Start -->
 <!--    <div class="section section-padding">-->
@@ -485,23 +433,19 @@
     <!-- Footer Top Section End -->
 
     <!-- Footer Bottom Section Start -->
-    <div class="footer-bottom-section section">
-        <div class="container">
-            <div class="row">
-
-                <!-- Footer Copyright Start -->
-                <div class="col-12">
-                    <p class="footer-copyright text-center">Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-                </div>
-                <!-- Footer Copyright End -->
-
-            </div>
-        </div>
-    </div>
     <!-- Footer Bottom Section End -->
     <!--透明背景层-->
-    <div class="bgBox"></div>
-    <div class="practiceBox">
+    <div class="bgBox emailBox none"></div>
+    <div class="practiceBox emailpracticeBox modal-content none">
+         <h4>Congratulations on recording!</h4>
+        <p>We will send your record to the teacher,please input the teacher'e-mail</p>
+        <label for="email">E-mail</label>
+        <input id="mail" style="width: 100%;" type="e-mail" name="">
+        <button id="sendEmail"  class="interviewBtn tryPractiice">Send E-mail</button>
+    </div>
+
+    <div class="bgBox openbgBox "></div>
+    <div class="practiceBox opnepracticeBox">
         <button class="offcanvas-close closeBox" data-target="#offcanvas">&times;</button>
         <h4>We need know from you!</h4>
         <p>What position are you apply for?</p>
@@ -523,9 +467,9 @@
             <option value="3">11-15 years working expenence</option>
             <option value="4">16-20 years working expenence</option>
         </select>
-        <button onclick="tyrInterview()" class="interviewBtn tryPractiice">Try practice</button>
+        <button id="openCamera"  class="interviewBtn tryPractiice">Start interview</button>
         <!--onclick作为点击事件，当鼠标点击时触发startInterview方法，执行startInterview函数内容-->
-        <button onclick="startInterview" class="interviewBtn startInterview">Start interview</button>
+     <!--    <button onclick="startInterview" class="interviewBtn startInterview">Start interview</button> -->
     </div>
 
     <!-- JS
@@ -551,9 +495,12 @@
     <!-- Main Activation JS -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/test.js"></script>
+     <script src="assets/js/fileSaver.js"></script>
+    
     <script>
+          
 
-    </script>
+</script>
 </body>
 
 </html>

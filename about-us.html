@@ -60,12 +60,12 @@
             <!-- Header Menu Start -->
             <nav id="main-menu" class="main-menu col-lg-auto order-lg-2">
                 <ul>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="cv-writing.html">CV Writing</a></li>
-                        <li><a href="blog.html">Benefits</a></li>
-                        <li><a href="blog.html">Trial Interview</a></li>
-                        <li><a href="blog.html">Watch Interview</a></li>
-                    </ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="cv-writing.html">CV Writing</a></li>
+                    <li class="isLoginTip">Interview Tips</li>
+                    <li  class="isLoginTrial">rial Interview</li>
+                    <li  class="isLoginWatch">Watch Interview</li>
+                </ul>
             </nav>
             <!-- Header Menu End -->
 
@@ -92,41 +92,12 @@
                 <!-- Offcanvas Menu Start -->
                 <div class="offcanvas-menu">
                     <nav>
-                        <ul>
-                            <li class="has-children"><a href="index.html">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Home One</a></li>
-                                    <li><a href="index-2.html">Home Two</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-children"><a href="job-list.html">Jobs</a>
-                                <ul class="sub-menu">
-                                    <li><a href="job-list.html">Job List</a></li>
-                                    <li><a href="job-single.html">Job Single</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="company-list.html">Company</a>
-                                <ul class="sub-menu">
-                                    <li><a href="company-list.html">Company List</a></li>
-                                    <li><a href="company-single.html">Company Single</a></li>
-                                    <li><a href="create-job.html">Create Job</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="faq.html">FAQ'S</a></li>
-                                    <li><a href="pricing.html">Pricing</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="blog.html">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact us</a></li>
+                         <ul>
+                            <li class="has-children"><a href="about-us.html">About Us</a></li>
+                            <li class="has-children"><a href="cv-writing.html">CV Writing</a></li>
+                            <li class="has-children isLoginTip"><a href="javascript:;">Interview Tips</a></li>
+                            <li class="has-children isLoginTrial"><a href="javascript:;">rial Interview</a></li>
+                            <li class="has-children isLoginWatch"><a href="javascript:;">Watch Interview</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -173,7 +144,7 @@
                                             <div class="col-auto mb-2"><a href="#">Forgot Password?</a></div>
                                         </div>
                                     </div>
-                                    <div class="col-12 mb-3"><input class="btn btn-primary w-100" type="submit" value="Login"></div>
+                                    <div class="col-12 mb-3"><input class="btn btn-primary w-100 loginBtn" type="submit" value="Login"></div>
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col text-center">
@@ -237,7 +208,7 @@
                 <div class="col-md-6 col-12 pr-lg-5 align-self-center mb-4">
                     <div class="about-content">
                         <h3 class="title">About Interview Master</h3>
-                        <p>
+                        <p style="font-size: 16px;">
                             Interviews are crucial moments in one’s career. Theoretical knowledge of interview questions isn't enough when you actually face an interview. Too often fear takes over our performance in job interviews.
                             Interview Master is built on the premise that practice & preparation are crucial to get over your anxieties when attending an interview.
                             As the adage goes – practice makes perfect! Mock interviews by Interview Master give you the platform to prepare, practice and experience first-hand how a real-life job interview feels. Familiarizing yourself with the interview environment beforehand in a relaxed and stress-free environment gives you an edge over your peers.
@@ -257,44 +228,6 @@
         </div>
     </div>
     <!-- About Us End -->
-
-    <!-- Funfact Section Start -->
-    <div class="section section-padding bg-parallax" data-bg-image="assets/images/bg/bg-3.jpg" data-overlay="50">
-        <div class="container">
-            <div class="funfact-wrap row">
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1354</span>
-                    <span class="title">Job Interviews</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1741</span>
-                    <span class="title">Members</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1204</span>
-                    <span class="title">Resume</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">142</span>
-                    <span class="title">Company</span>
-                </div>
-                <!-- Funfact Start -->
-
-            </div>
-        </div>
-    </div>
-    <!-- Funfact Section End -->
 
     <!-- Team Section Start -->
 <!--    <div class="section section-padding">-->
@@ -478,19 +411,6 @@
     <!-- Footer Top Section End -->
 
     <!-- Footer Bottom Section Start -->
-    <div class="footer-bottom-section section">
-        <div class="container">
-            <div class="row">
-
-                <!-- Footer Copyright Start -->
-                <div class="col-12">
-                    <p class="footer-copyright text-center">Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-                </div>
-                <!-- Footer Copyright End -->
-
-            </div>
-        </div>
-    </div>
     <!-- Footer Bottom Section End -->
 
     <!-- JS

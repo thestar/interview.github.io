@@ -417,10 +417,11 @@ if(istyrInterview == true){
 
                 // alert('Drop WebM file on Chrome or Firefox. Both can play entire file. VLC player or other players may not work.');
             };
-
             var mediaRecorder;
             var videosContainer = document.getElementById('videos-container');
-
+            var box = document.getElementById("videoBox")
+            var contentHeight = window.getComputedStyle(box).width; 
+            console.log(contentHeight)
             function openCamera(){
                 var len = videosContainer.childNodes.length;
                 for(var i=0;i<len;i++){
@@ -428,9 +429,9 @@ if(istyrInterview == true){
                 }
 
                 var video = document.createElement('video');
-
-                var videoWidth = 570;
-                var videoHeight = 570;
+                console.log(video,'video')
+                var videoWidth = parseInt(contentHeight)-20;
+                var videoHeight = parseInt(contentHeight);
 
                 video.controls = false;
                 video.muted = true;

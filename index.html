@@ -52,7 +52,7 @@
 
                 <!-- Header Links Start -->
                 <div class="header-links col-auto order-lg-3">
-                    <a href="#" data-toggle="modal" data-target="#loginSignupModal" data-target-sub="#login">Login</a>
+                    <a class="loginBtn" href="#" data-toggle="modal" data-target="#loginSignupModal" data-target-sub="#login">Login</a>
                     <span>or</span>
                     <a href="#" data-toggle="modal" data-target="#loginSignupModal" data-target-sub="#signup">Sign up</a>
                 </div><!-- Header Links End -->
@@ -62,9 +62,9 @@
                     <ul>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="cv-writing.html">CV Writing</a></li>
-                        <li><a href="blog.html">Benefits</a></li>
-                        <li><a href="blog.html">Trial Interview</a></li>
-                        <li><a href="blog.html">Watch Interview</a></li>
+                        <li class="isLoginTip">Interview Tips</li>
+                        <li  class="isLoginTrial">rial Interview</li>
+                        <li  class="isLoginWatch">Watch Interview</li>
                     </ul>
                 </nav>
                 <!-- Header Menu End -->
@@ -93,7 +93,14 @@
                 <div class="offcanvas-menu">
                     <nav>
                         <ul>
-                            <li class="has-children"><a href="index.html">Watch Interviews</a>
+                            <li class="has-children"><a href="about-us.html">About Us</a></li>
+                            <li class="has-children"><a href="cv-writing.html">CV Writing</a></li>
+                            <li class="has-children isLoginTip"><a href="javascript:;">Interview Tips</a></li>
+                            <li class="has-children isLoginTrial"><a href="javascript:;">rial Interview</a></li>
+                            <li class="has-children isLoginWatch"><a href="javascript:;">Watch Interview</a></li>
+                        </ul>
+
+                           <!--  <li class="has-children"><a href="index.html">Watch Interviews</a>
                                 <ul class="sub-menu">
                                     <li><a href="index.html">Home One</a></li>
                                     <li><a href="index-2.html">Home Two</a></li>
@@ -127,7 +134,7 @@
                                 </ul>
                             </li>
                             <li><a href="contact.html">Contact us</a></li>
-                        </ul>
+                        </ul> -->
                     </nav>
                 </div>
                 <!-- Offcanvas Menu End -->
@@ -173,7 +180,7 @@
                                             <div class="col-auto mb-2"><a href="#">Forgot Password?</a></div>
                                         </div>
                                     </div>
-                                    <div class="col-12 mb-3"><input class="btn btn-primary w-100" type="submit" value="Login"></div>
+                                    <div class="col-12 mb-3"><input class="btn btn-primary w-100 loginBtn" type="submit" value="L88ogin"></div>
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col text-center">
@@ -220,8 +227,9 @@
         <div class="slide-item bg-parallax" data-bg-image="assets/images/slider/slider-1.jpg" data-overlay="50">
             <div class="container">
                 <div class="slider-content text-center">
-                    <h2 class="title" style="font-size: 70px;">Interviewing: the most profitable skill you can learn</h2>
-                    <p>Helps students and job seekers crack interviews & land their dream jobs!</p>
+                    <h2 class="title">Interviewing: the most profitable skill you can learn</h2>
+                    <p>Helps students and job seekers crack interviews & 
+                    land their dream jobs!</p>
                 </div>
             </div>
         </div>
@@ -295,11 +303,11 @@
                             </div>
 
                             <div class="body">
-                                <span>Tell us when and what you want to practice and we’ll pair you with an optimal peer. We provide interview questions and a collaborative environment for you to conduct the interview.</span>
+                                <span  style="font-size: 16px;">Tell us when and what you want to practice and we’ll pair you with an optimal peer. We provide interview questions and a collaborative environment for you to conduct the interview.</span>
                             </div>
 
                             <div class="foot">
-                                <button class="btn goInterview">Start mock interview</button>
+                                <!--<button class="btn goInterview">Start mock interview</button>-->
                             </div>
 
                         </div>
@@ -319,11 +327,11 @@
                             </div>
 
                             <div class="body">
-                                <span>Interviews are conducted using a collaborative environment over video. You and your peer will interview each other for 30-45 minutes. After the interview, you’ll each provide feedback on to help each other improve.</span>
+                                <span style="font-size: 16px;">Interviews are conducted using a collaborative environment over video. You and your peer will interview each other for 30-45 minutes. After the interview, you’ll each provide feedback on to help each other improve.</span>
                             </div>
 
                             <div class="foot">
-                                <button class="btn goInterview">Start Practicing</button>
+                                <!--<button class="btn goInterview">Start Practicing</button>-->
                             </div>
 
                         </div>
@@ -343,11 +351,11 @@
                             </div>
 
                             <div class="body">
-                                <span>Learn from peers’ feedback, gain confidence and master the art of interviewing. Keep practicing until you interview like a rock star. Impress recruiters and land awesome job offers.</span>
+                                <span  style="font-size: 16px;">Learn from peers’ feedback, gain confidence and master the art of interviewing. Keep practicing until you interview like a rock star. Impress recruiters and land awesome job offers.</span>
                             </div>
 
                             <div class="foot">
-                                <button class="btn goInterview">Start Practicing</button>
+                                <button class="btn goInterview">Start Mock Interview</button>
                             </div>
 
                         </div>
@@ -362,43 +370,7 @@
     </div>
     <!-- Recent Jobs End -->
 
-    <!-- Funfact Section Start -->
-    <div class="section section-padding bg-parallax" data-bg-image="assets/images/bg/bg-1.jpg" data-overlay="50">
-        <div class="container">
-            <div class="funfact-wrap row">
 
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1354</span>
-                    <span class="title">Interviews</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1741</span>
-                    <span class="title">Members</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">1204</span>
-                    <span class="title">Resume</span>
-                </div>
-                <!-- Funfact Start -->
-
-                <!-- Funfact Start -->
-                <div class="funfact col-md-3 col-sm-6 col-12">
-                    <span class="counter">142</span>
-                    <span class="title">Company</span>
-                </div>
-                <!-- Funfact Start -->
-
-            </div>
-        </div>
-    </div>
-    <!-- Funfact Section End -->
 
     <!-- Featured Conpanies Start -->
     <div class="section section-padding">
@@ -664,20 +636,7 @@
     </div>
     <!-- Footer Top Section End -->
 
-    <!-- Footer Bottom Section Start -->
-    <div class="footer-bottom-section section">
-        <div class="container">
-            <div class="row">
 
-                <!-- Footer Copyright Start -->
-                <div class="col-12">
-                    <p class="footer-copyright text-center">Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-                </div>
-                <!-- Footer Copyright End -->
-
-            </div>
-        </div>
-    </div>
     <!-- Footer Bottom Section End -->
 
     <!-- JS

@@ -5,6 +5,31 @@
         Commons Variables
     -----------------------------------*/
     var successLogin = localStorage.getItem('successLogin')?localStorage.getItem('successLogin'):false;
+    console.log(successLogin)
+
+    $('.isLoginTip').click(function(){
+        if(successLogin){
+            window.location="blog.html"
+        }else{
+            alert('Please login firstly')
+        }
+    })
+
+    $('.isLoginTrial').click(function(){
+        if(successLogin){
+            window.location="interview.html"
+        }else{
+            alert('Please login firstly')
+        }
+    })
+    $('.isLoginWatch').click(function(){
+        if(successLogin){
+            window.location="blog.html"
+        }else{
+            alert('Please login firstly')
+        }
+    })
+
     var $window = $(window),
         $body = $('body'),
         $mainWrapper = $('.main-wrapper'),
@@ -306,17 +331,21 @@
             window.location='interview.html';
         }
     })
-
-    $(function () {
+    $('.loginBtn').click(function(){
+        console.log(999)
         successLogin = true;
         localStorage.setItem("successLogin",successLogin);
+    })
+
+    $(function () {
+
         // Get the form.
         var form = $('#contact-form');
         // Get the messages div.
         var formMessages = $('.form-messege');
         // Set up an event listener for the contact form.
         $(form).submit(function (e) {
-
+            console.log(e,'e')
             // Stop the browser from submitting the form.
             e.preventDefault();
             // Serialize the form data.
