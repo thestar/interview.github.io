@@ -136,7 +136,7 @@
                             <li class="has-children"><a href="about-us.html">About Us</a></li>
                             <li class="has-children"><a href="cv-writing.html">CV Writing</a></li>
                             <li class="has-children isLoginTip"><a href="javascript:;">Interview Tips</a></li>
-                            <li class="has-children isLoginTrial"><a href="javascript:;">rial Interview</a></li>
+                            <li class="has-children isLoginTrial"><a href="javascript:;">Trial Interview</a></li>
                             <li class="has-children isLoginWatch"><a href="javascript:;">Watch Interview</a></li>
                         </ul>
                     </nav>
@@ -173,7 +173,6 @@
                                 <div class="row mb-n3">
                                     <div class="col-12 mb-3"><input type="email" placeholder="Email"></div>
                                     <div class="col-12 mb-3"><input type="password" placeholder="Password" class="password"></div>
-                                    <div class="col-12 mb-3"><input type="password" placeholder="Repeat Password" class="repeatPassword"></div>
                                     <div class="col-12 mb-3">
                                         <div class="row justify-content-between mb-n2">
                                             <div class="col-auto mb-2">
@@ -206,6 +205,7 @@
                                     <div class="col-12 mb-3"><input type="text" placeholder="Your Name"></div>
                                     <div class="col-12 mb-3"><input type="email" placeholder="Your Email Address"></div>
                                     <div class="col-12 mb-3"><input type="password" placeholder="Choose a Password"></div>
+                                     <div class="col-12 mb-3"><input type="password" placeholder="Repeat Password" class="repeatPassword"></div>
                                     <div class="col-12 mb-3"><input class="btn btn-primary w-100 signup" type="submit" value="Sign Up"></div>
                                 </div>
                                 <div class="row mt-4">
@@ -374,6 +374,9 @@
            </div>
            <div class="practiceBox videos"></div>
     <div class="practiceBox emailpracticeBox modal-content none">
+         <button type="button" style="margin-left: 95%;" class="close closeEmail" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+         </button>
          <h4>Congratulations on recording!</h4>
         <p>We will send your record to the teacher,please input the teacher'e-mail</p>
         <label for="email">E-mail</label>
@@ -420,7 +423,7 @@
 
         for (let i = 0; i < interviewList.length; i++){
             domFinish = '';
-               var html = ' <li class="watchV" >'+interviewList[i].title+'<span style="margin-left:20px;">'+interviewList[i].time+'</span><span><button id="mc-submit" class="btn email"><i class="fa fa-envelope-o"></i></button></span><span><button id="mc-submit" class="btn"><img class="video" vpath="1.png" ipath="1.mp4" width="16px" src="assets/images/play.png"></button></span><span><button id="mc-submit" ref="'+i+'" class="btn garbage"><img width="16px" src="assets/images/garbage.png"></button></span>'+'<div class="line"></div><div class="content"><div class="add"></div></div></li>';
+               var html = ' <li class="watchV" ><span style="width:20%;display: inline-block;">'+interviewList[i].title+'</span><span style="margin-left:20px;width:20%;display: inline-block;">'+interviewList[i].time+'</span><span style="width:20%;display: inline-block;"><button id="mc-submit" class="btn email"><i class="fa fa-envelope-o"></i></button></span><span style="width:20%;display: inline-block;"><button id="mc-submit" class="btn"><img class="video" vpath="1.png" ipath="1.mp4" width="16px" src="assets/images/play.png"></button></span><span style="width:17%;display: inline-block;"><button id="mc-submit" ref="'+i+'" class="btn garbage"><img width="16px" src="assets/images/garbage.png"></button></span>'+'<div class="line"></div><div class="content"><div class="add"></div></div></li>';
                  $('#ul').append(html);
 
             for(let n = 0; n < interviewList[i].list.length-1; n++){
@@ -444,6 +447,12 @@
             interviewList.splice(num,1);
             localStorage.setItem("newcommonList",JSON.stringify(interviewList));    
             window.location.reload();
+         })
+
+
+         $('.closeEmail').on("click",function(){
+            $('.emailpracticeBox').addClass('none');
+             $('.emailBox').addClass('none');
          })
 
          $('#cancelBtn').on("click",function(){
