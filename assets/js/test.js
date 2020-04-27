@@ -223,9 +223,11 @@ var difficulty = $(".difficultySelected").val();
 var type = $(".positionSelected").val();
 // 初始化随机数组，默认为空数组
 var commonList = [];
+ var newcommonList = JSON.parse(localStorage.getItem('newcommonList'))?JSON.parse(localStorage.getItem('newcommonList')):[];
 // 初始化次数，在点击next,skip可用，
 var num = 1;
 // 初始化标题，即用户所选的岗位，默认为空字符串
+var time ='';
 var title = '';
 
 // 当用户选择岗位角色值有变时，触发该函数，并获取当前所选值
@@ -276,7 +278,22 @@ function getRandomArrayElements(arr, count) {
 //     }
 // })
 
+function getNow(s) {
+return s < 10 ? '0' + s: s;
+}
 
+var myDate = new Date();             
+
+var year=myDate.getFullYear();        //获取当前年
+var month=myDate.getMonth()+1;   //获取当前月
+var date=myDate.getDate();            //获取当前日
+
+
+var h=myDate.getHours();              //获取当前小时数(0-23)
+var m=myDate.getMinutes();          //获取当前分钟数(0-59)
+var s=myDate.getSeconds();
+
+time =year+'-'+getNow(month)+"-"+getNow(date)+" "+getNow(h)+':'+getNow(m);
 
 function skip(){
     for(num<commonList.length+1;num++;){
@@ -292,6 +309,40 @@ function skip(){
         return;
     }
 };
+
+        var Time = 180;
+        var int = null;
+        var $time = $('.time');
+
+        function timer() {
+            Time--;
+            if (Time == 0) {
+               Time =180;
+               nextQuest();
+               timer();
+            }
+
+            int = setTimeout(timer, 1000);
+
+            var minutes = parseInt((Time / 60)); // 分
+            var seconds = parseInt((Time % 60)); // 秒
+
+            function checkTime(i) { //将0-9的数字前面加上0\.  1变为01
+                if (i < 10) {
+                    return '0' + i;
+                } else {
+                    return i;
+                }
+            }
+
+            minutes = checkTime(minutes);
+            seconds = checkTime(seconds);
+
+            $time.html(minutes + ':' + seconds);
+        }
+       
+
+ 
 
 function restart (){
     num = 0;
@@ -368,8 +419,8 @@ function tyrInterview(){
 }
 
 
+
 if(istyrInterview == true){
-    console.log(333000)
     $('.tryPractiice').addClass('none');
 }
 
@@ -396,10 +447,20 @@ if(istyrInterview == true){
     for(var i = 0;i<data.length;i++){
         if(type == data[i].type){
             title = data[i].title;
+            localStorage.setItem("title",title);
+            localStorage.setItem("time",time);
             for(var t = 0;t<data[i].list.length;t++){
                 questionList.push(data[i].list[t]);
             }
             commonList = getRandomArrayElements(questionList, 11);
+                    var single = {
+                        title:title,
+                        time:time,
+                        list:commonList,
+                    }
+            newcommonList.push(single);
+            console.log(newcommonList,'newcommonList')
+            localStorage.setItem("newcommonList",JSON.stringify(newcommonList));
             var html = '<div class="about-content"><h3 class="title">'+title+'</h3><p>'+'1.'+commonList[1].text+'</p>';
             $(".answerArea").html('');
             $(".answerArea").append(html);
@@ -408,8 +469,12 @@ if(istyrInterview == true){
             };
 
             startBtn.onclick = function() {
+                 // timer();
                 this.disabled = true;
+                    timer();
+                 console.log('22')
                 startRecord();
+
             };
 
             saveBtn.onclick = function() {
@@ -564,7 +629,6 @@ function send(){
     req.open("POST", "com.spinsoft.bip.frame.utils.image.saveMp4.biz.ext");
     req.send(data);
 }
-
 $('#sendEmail').click(function(){
     var email = $('#mail').val().length;
     if(email!=0){
@@ -574,3 +638,9 @@ $('#sendEmail').click(function(){
         alert("Please input the teacher'email!")
     }
 })
+
+
+
+
+// watch
+

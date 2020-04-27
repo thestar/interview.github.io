@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS
@@ -26,6 +27,45 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style type="text/css">
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+            
+            li {
+                list-style: none;
+                
+            }
+            
+            .box {
+                width: 100%;
+                margin: 0 auto;
+                background-color: #fff;
+                box-shadow: 0 0 5px 3px rgba(20, 20, 20, 0.1);
+            }
+            
+            #ul {
+                padding: 55px;
+                margin: 0 auto;
+                max-width: 880px;
+            }
+            #ul>li{
+                cursor: pointer;
+            }
+ 
+            .line{
+                border-bottom: 1px solid red;
+                margin: 20px 0px;
+            }
+            .content{
+                display: none;
+                
+            }
+             .videos{ display:none; background: #fff;
+             position:fixed; z-index:100; }
+     .vclose { position:absolute;right:1%; top:1%; border-radius:100%; cursor: pointer; }
+    </style>
 
 </head>
 
@@ -63,7 +103,7 @@
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="cv-writing.html">CV Writing</a></li>
                     <li class="isLoginTip">Interview Tips</li>
-                    <li  class="isLoginTrial">rial Interview</li>
+                    <li  class="isLoginTrial">Trial Interview</li>
                     <li  class="isLoginWatch">Watch Interview</li>
                 </ul>
             </nav>
@@ -91,7 +131,6 @@
 
                 <!-- Offcanvas Menu Start -->
                 <div class="offcanvas-menu">
-
                     <nav>
                          <ul>
                             <li class="has-children"><a href="about-us.html">About Us</a></li>
@@ -133,7 +172,8 @@
                             <form>
                                 <div class="row mb-n3">
                                     <div class="col-12 mb-3"><input type="email" placeholder="Email"></div>
-                                    <div class="col-12 mb-3"><input type="password" placeholder="Password"></div>
+                                    <div class="col-12 mb-3"><input type="password" placeholder="Password" class="password"></div>
+                                    <div class="col-12 mb-3"><input type="password" placeholder="Repeat Password" class="repeatPassword"></div>
                                     <div class="col-12 mb-3">
                                         <div class="row justify-content-between mb-n2">
                                             <div class="col-auto mb-2">
@@ -145,7 +185,7 @@
                                             <div class="col-auto mb-2"><a href="#">Forgot Password?</a></div>
                                         </div>
                                     </div>
-                                    <div class="col-12 mb-3"><input class="btn btn-primary w-100 loginBtn" type="submit" value="Login"></div>
+                                    <div class="col-12 mb-3"><input class="btn btn-primary w-100" type="submit" value="Login"></div>
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col text-center">
@@ -191,169 +231,56 @@
     <div class="page-heading-section section bg-parallax" data-bg-image="assets/images/bg/bg-1.jpg" data-overlay="50">
         <div class="container">
             <div class="page-heading-content text-center">
-                <h3 class="title">Blog</h3>
+                <h3 class="title">Watch Interview</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Blog</li>
+                    <li class="breadcrumb-item active">Watch Interview</li>
                 </ol>
             </div>
         </div>
     </div>
     <!-- Page Heading Section End -->
 
-    <!-- Blog Section Start -->
-    <div class="section section-padding">
-        <div class="container">
-            <div class="row mb-n5">
+    <!-- About Us Start -->
+    <div class="section section-padding" >
+        <div class="container"style="border:1px solid red;padding:30px; background: #fff8f8;">
 
-                <div class="col-lg-8 col-12 mb-5 pr-lg-5">
 
-                    <!-- Blog Wrapper Start -->
-                    <div class="blog-wrap row">
 
-                        <!-- Blog Single Start -->
-                        <div class="col-12">
-                            <div class="blog blog-single">
-                                <div class="media">
-                                    <img src="assets/images/blog/blog-2.jpg" alt="">
-                                </div>
+        <section class="experiment" style="text-align:center;border:none; margin-top:20px;">
+
+            <!--<a href="javascript:void(0)" οnclick="send()">发送</a>-->
+        </section>
+ </article>
+            <div class="row" style="width: 100%">
+                <!-- About Content Start -->
+                <div  style="width: 100%">
+                    <div class="box">
+                        <ul id="ul">
+                            <li>
+                                <h4>Interview List</h4>
+                                <div class="line"></div>
+                            </li>
+                            <!-- <li class="watchV">Client agreement
+                                <div class="line"></div>
                                 <div class="content">
-                                    <h6 class="title">7 Careers To Consider If You Love Traveling</h6>
-                                    <!--<ul class="meta">-->
-                                        <!--<li>Posted on 25 Jan, 2019</li>-->
-                                        <!--<li><a href="#">3 Comments</a></li>-->
-                                    <!--</ul>-->
-                                    <div class="desc">
-                                        <p>1. Bartender/server
-                                        </p>
-                                        <p>Bars and restaurants exist everywhere, and the duties and responsibilities tend to be the same universally. Especially if you have experience in this area, landing a job in new locales as you travel around shouldn’t be hard. The biggest constraint is that you’d need to some command of the language since you’re working with the public. Moreover, visa requirements vary by country—be sure to check the State Department website for further details on how to go abroad.
-                                        </p>
-                                        <!--<blockquote class="blockquote">-->
-                                            <!--<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aspernatur nemo pariatur eius corrupti cupiditate rem molestias voluptatem explicabo eum.</p>-->
-                                            <!--<footer class="blockquote-footer"> <cite title="Source Title">Source Title</cite></footer>-->
-                                        <!--</blockquote>-->
-                                        <p>2. Event planner
-                                        </p>
-                                        <p>Imagine getting paid to attend the World Cup or the Olympics. Planning massive events like these requires a lot of work, before, during, and after the events, so the companies that are hired to plan them are heavily staffed. Working for a company that orchestrates large scale events like these will guarantee you’ll be traveling the world plenty.
-                                        </p>
-                                        <p>3. International tour guide or tour director
-                                        </p>
-                                        <p>A tour guide actually leads groups of visitors around sites, whereas a tour director plans the logistics behind the scenes. Guides and directors are needed in basically all major tourist destinations worldwide, so there are plenty of opportunities available. It’s a great way to learn about new places while making money, and it’s definitely exciting work. You get to meet all kinds of different people, and no two workdays are the same.
-                                        </p>
-                                        <p>4. Teaching English as a second language
-                                        </p>
-                                        <p>The requirements vary country to country, so you may have to get some sort of certification beforehand, but ESL teachers are highly sought worldwide. According to one source, Asian countries seem to have the highest demand and the best pay, although there is also solid demand in Central America and Europe, too.
-                                        </p>
-                                        <p>5. Government employee</p>
-                                        <p>If you’re interested in foreign affairs and public service, seeking a position as a Foreign Service Officer may be an ideal opportunity for you. The main advantages of this line of work are job security with great benefits and pay. The cons are that you have to pass a Foreign Service Officer exam to qualify, and you have little say in where you get assigned. The process is lengthy.</p>
-
-                                        <p>6. Cruise ship employee or flight attendant</p>
-                                        <p>What better travel job than working for the company that provides the mode of transportation for travelers? There’s a huge variety of jobs available aboard cruise ships, including entertainment (musicians, dancers, broadcast and sound technicians), as well as service (cooks, bartenders, servers), and positions in logistics (electricians, maintenance staff, hotel managers, childcare employees). The main perks are free meals and accommodations while sailing the world. Drawbacks are that positions are pretty competitive to get, and the hours are long.
-
-                                        <p>Flight attendant positions are somewhat easier to secure. Most airlines only require that candidates have some type of prior experience in customer service. Downsides, though, are crazy hours and a fast-paced lifestyle with little control over where you end up each night. But you’ll get to travel all over, and the job also comes with steep discount on flights for employees as well as friends and families.</p>
-
-                                        <p>7. Freelance writing or photography, or…well, freelance anything</p>
-                                        <p>The gig economy is on the rise, and more and more people are building their careers on freelance work, instead of freelancing merely as a side hustle. There are pros and cons to this, but one of the main draws is that, depending on your line of work, freelancing can enable you to become location independent, meaning you’re not tied to living in one specific area to do your job and earn income.</p>
-
-                                    </div>
-                                    <div class="foot row justify-content-between align-items-start mb-n2">
-                                        <div class="blog-tags col-auto mb-2">
-                                            <ul>
-                                                <li><strong>Tags:</strong></li>
-                                                <li><a href="#">tips</a></li>
-                                                <li><a href="#">job</a></li>
-                                                <li><a href="#">questions</a></li>
-                                                <li><a href="#">interview</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="blog-share col-auto mb-2">
-                                            <ul>
-                                                <li><strong>Share:</strong></li>
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <p>RISK WARNING: Trading leveraged derivative products such as Foreign Exchange (Forex), </p>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Blog Single End -->
-
-                        <!-- Blog Navigation Start -->
-                        <div class="col-12">
-                            <ul class="blog-navigation row mx-0">
-                                <li class="col-sm-6 col-12 mt-3 mt-sm-0"><a href="blog-singlea.html" class="next-blog">Top 5 Interview Questions and How to Answer Them</a></li>
-                                <li class="col-sm-6 col-12 mt-3 mt-sm-0"><a href="blog-singlea.html" class="next-blog">Top 5 Interview Questions and How to Answer Them</a></li>
-                            </ul>
-                        </div>
-                        <!-- Blog Navigation End -->
-
-                        <!-- Blog Comments Form Start -->
-                        <div class="col-12">
-                            <div class="comment-form">
-                                <h6 class="mb-4">Drop Your Comment</h6>
-                                <form action="#">
-                                    <div class="row mb-n3">
-                                        <div class="col-md-6 col-12 mb-3"><input type="text" placeholder="Your Name"></div>
-                                        <div class="col-md-6 col-12 mb-3"><input type="email" placeholder="Your Email"></div>
-                                        <div class="col-12 mb-3"><textarea rows="4" placeholder="Comment"></textarea></div>
-                                        <div class="col-12 mb-3"><input type="submit" class="btn btn-primary" value="Submit now"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- Blog Comments Form End -->
-
+                            </li> -->
+                        </ul>
                     </div>
-                    <!-- Blog Wrapper End -->
-
+                    
                 </div>
+                <!-- About Content End -->
 
-                <!-- Blog Sidebar Wrap Start -->
-                <div class="col-lg-4 col-12 mb-5">
-                    <div class="sidebar-wrap">
-                        <!-- Sidebar (Search) Start -->
-                        <div class="sidebar-widget">
-                            <div class="inner">
-                                <h6 class="title">Search Keywords</h6>
-                                <form action="#">
-                                    <input type="text" placeholder="Search">
-                                </form>
-                            </div>
-                        </div>
-                        <!-- Sidebar (Search) End -->
-
-                        <!-- Sidebar (Recent Posts) Start -->
-                        <div class="sidebar-widget">
-                            <div class="inner">
-                                <h6 class="title">Recent Posts</h6>
-                                <ul class="sidebar-post">
-                                    <li>
-                                        <a href="blog-singlea.html" class="image"><img src="assets/images/blog/sidebar-1.jpg" alt=""></a>
-                                        <a href="blog-singlea.html" class="title">Top 5 Interview Questions and How to Answer Them</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-singleb.html" class="image"><img src="assets/images/blog/sidebar-2.jpg" alt=""></a>
-                                        <a href="blog-singleb.html" class="title">7 Careers To Consider If You Love Traveling</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-singlec.html" class="image"><img src="assets/images/blog/sidebar-4.jpg" alt=""></a>
-                                        <a href="blog-singlec.html" class="title">Body Language Tips for Your Next Job Interview</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <!-- About Image Start -->
+                <div class="col-md-6 col-12 mb-4 ">
+                  
                 </div>
-                <!-- Blog Sidebar Wrap End -->
-
+                <!-- About Image End -->
             </div>
-
         </div>
     </div>
-    <!-- Blog Section End -->
 
     <!-- Footer Top Section Start -->
     <div class="footer-top-section section">
@@ -437,14 +364,28 @@
 
             </div>
         </div>
+
+       
+          <div class="bgBox emailBox none"></div>
+           <div class="practiceBox deleteBox none">
+               <h4>Are you sure want to delete?</h4>
+                <button id="deleteBtn"  class="interviewBtn tryPractiice">Yes</button>
+                <button id="cancelBtn"  class="interviewBtn tryPractiice">Cancel</button>
+           </div>
+           <div class="practiceBox videos"></div>
+    <div class="practiceBox emailpracticeBox modal-content none">
+         <h4>Congratulations on recording!</h4>
+        <p>We will send your record to the teacher,please input the teacher'e-mail</p>
+        <label for="email">E-mail</label>
+        <input id="mail" style="width: 100%;" type="e-mail" name="">
+        <button id="sendEmail"  class="interviewBtn tryPractiice">Send E-mail</button>
+    </div>
     </div>
     <!-- Footer Top Section End -->
 
-
+    <!-- Footer Bottom Section Start -->
     <!-- Footer Bottom Section End -->
-
-    <!-- JS
-============================================ -->
+    <!--透明背景层-->
 
     <!-- Google Map API JS -->
     <script src='https://ditu.google.cn/maps/api/js?key=AIzaSyC3nDHy1dARR-Pa_2jjPCjvsOR4bcILYsM'></script>
@@ -465,7 +406,94 @@
 
     <!-- Main Activation JS -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/fileSaver.js"></script>        
+    <script>
+        var isShow = false;
+        var interviewList = JSON.parse(localStorage.getItem('newcommonList'))?JSON.parse(localStorage.getItem('newcommonList')):[];
+        console.log(interviewList,'interviewList')
+        // var title = localStorage.getItem('title')?localStorage.getItem('title'):'';
+        // var time = localStorage.getItem('time')?localStorage.getItem('time'):'';
+        // var html = ' <li class="watchV" >'+title+'<div class="line"></div><div class="content"><div class="add"></div></div></li>';
+        // $("#ul li").after(html);
+        var domFinish = '';
+        var dom = '';
 
+        for (let i = 0; i < interviewList.length; i++){
+            domFinish = '';
+               var html = ' <li class="watchV" >'+interviewList[i].title+'<span style="margin-left:20px;">'+interviewList[i].time+'</span><span><button id="mc-submit" class="btn email"><i class="fa fa-envelope-o"></i></button></span><span><button id="mc-submit" class="btn"><img class="video" vpath="1.png" ipath="1.mp4" width="16px" src="assets/images/play.png"></button></span><span><button id="mc-submit" ref="'+i+'" class="btn garbage"><img width="16px" src="assets/images/garbage.png"></button></span>'+'<div class="line"></div><div class="content"><div class="add"></div></div></li>';
+                 $('#ul').append(html);
+
+            for(let n = 0; n < interviewList[i].list.length-1; n++){
+             dom = '<li>'+Number(n+1)+'.'+interviewList[i].list[n].text+'</li>';       
+              $('#ul').children('li').eq(i+1).find('.add').append(dom);
+                // console.log(this.'this')
+           }  
+           // html.find('.add').append(domFinish);
+            // domFinish = domFinish+dom;
+             // console.log(domFinish,'domFinish')
+            
+           
+       }
+       var num = null;
+         $(".garbage").on("click",function(){
+            num = $(this).attr("ref");
+             $('.emailBox').removeClass('none');
+            $('.deleteBox').removeClass('none');
+       })
+         $('#deleteBtn').on("click",function(){
+            interviewList.splice(num,1);
+            localStorage.setItem("newcommonList",JSON.stringify(interviewList));    
+            window.location.reload();
+         })
+
+         $('#cancelBtn').on("click",function(){
+            $('.emailBox').addClass('none');
+            $('.deleteBox').addClass('none');
+         })
+
+         $(".video").on("click",function(){
+            var img = $(this).attr('vpath');//获取视频预览图
+                 var video = $(this).attr('ipath');//获取视频路径
+                 $('.videos').html("<video style='width:100%;height:100%;' id=\"video\" poster='"+img+"' src='"+video+"' preload=\"auto\" controls=\"controls\" autoplay=\"autoplay\"></video><img onClick=\"close1()\" class=\"vclose\" src=\"assets/images/close.png\" width=\"25\" height=\"25\"/>");
+                 $('.videos').show();
+                 $('.emailBox').removeClass('none');
+       })
+         function close1(){
+             // var v = document.getElementById('video');//获取视频节点
+             $('.videos').hide();//点击关闭按钮关闭暂停视频
+             // v.pause();
+             $('.videos').html();
+              $('.emailBox').addClass('none');
+         }
+
+        $('.email').on("click",function(){
+            $('.emailBox').removeClass('none');
+            $('.emailpracticeBox').removeClass('none');
+        })
+
+        $('#sendEmail').click(function(){
+            var email = $('#mail').val().length;
+            if(email!=0){
+                alert('Mail sent successfully!');
+                
+            }else{
+                alert("Please input the teacher'email!")
+            }
+        })
+
+       $(".watchV").click(function(){  
+              if(isShow == true){
+                  $(this).find(".content").hide();
+                   isShow = false;
+                  }else{                                 
+                    // $(this).find('.add').append(domFinish);
+                    $(this).find(".content").show();
+                    isShow = true;
+            }
+        })  
+       
+
+</script>
 </body>
 
 </html>

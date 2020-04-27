@@ -5,7 +5,12 @@
         Commons Variables
     -----------------------------------*/
     var successLogin = localStorage.getItem('successLogin')?localStorage.getItem('successLogin'):false;
-    console.log(successLogin)
+    if(successLogin){
+         var account = '<span>My Account / Sign out</span>';
+        console.log(account)
+    }
+   
+    $('.header-links').html(account); 
 
     $('.isLoginTip').click(function(){
         if(successLogin){
@@ -24,7 +29,7 @@
     })
     $('.isLoginWatch').click(function(){
         if(successLogin){
-            window.location="blog.html"
+            window.location="watchInterview.html"
         }else{
             alert('Please login firstly')
         }
@@ -333,9 +338,24 @@
     })
     $('.loginBtn').click(function(){
         console.log(999)
-        successLogin = true;
-        localStorage.setItem("successLogin",successLogin);
+        var passworda = $('password').val();
+        var passwordb = $('repeatPassword').val();
+        if(passworda!=passwordb){
+            alert('Please input the right password!')
+        }else{
+             var account = '<span>My Account / Sign out</span>';
+             console.log(account)
+             $('.header-links').html(account);       
+             successLogin = true;
+            localStorage.setItem("successLogin",successLogin);
+        }
     })
+
+     $('.signup').click(function(){
+        alert('Sign up successfully!')
+     })
+
+
 
     $(function () {
 

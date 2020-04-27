@@ -64,7 +64,7 @@
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="cv-writing.html">CV Writing</a></li>
                     <li class="isLoginTip">Interview Tips</li>
-                    <li  class="isLoginTrial">rial Interview</li>
+                    <li  class="isLoginTrial">Trial Interview</li>
                     <li  class="isLoginWatch">Watch Interview</li>
                 </ul>
             </nav>
@@ -133,7 +133,8 @@
                             <form>
                                 <div class="row mb-n3">
                                     <div class="col-12 mb-3"><input type="email" placeholder="Email"></div>
-                                    <div class="col-12 mb-3"><input type="password" placeholder="Password"></div>
+                                    <div class="col-12 mb-3"><input type="password" placeholder="Password" class="password"></div>
+                                    <div class="col-12 mb-3"><input type="password" placeholder="Repeat Password" class="repeatPassword"></div>
                                     <div class="col-12 mb-3">
                                         <div class="row justify-content-between mb-n2">
                                             <div class="col-auto mb-2">
@@ -166,7 +167,7 @@
                                     <div class="col-12 mb-3"><input type="text" placeholder="Your Name"></div>
                                     <div class="col-12 mb-3"><input type="email" placeholder="Your Email Address"></div>
                                     <div class="col-12 mb-3"><input type="password" placeholder="Choose a Password"></div>
-                                    <div class="col-12 mb-3"><input class="btn btn-primary w-100" type="submit" value="Sign Up"></div>
+                                    <div class="col-12 mb-3"><input class="btn btn-primary w-100 signup" type="submit" value="Sign Up"></div>
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col text-center">
@@ -222,11 +223,14 @@
                             Job specific interview questions are designed to determine if you have the knowledge and skills needed to perform the job for which you are being considered. When you respond, your goal is to show that you are the best fit for the job out of all the applicants the employer is interviewing.
                         </p>
                         </div>
+                    
                     </div>
-                    <button id="start-recording" class="interviewBtn questionBtn">Start</button>
+                    <div class="time"></div>
+                    <button id="start-recording" class="interviewBtn questionBtn">Start 
+                    </button>
                     <button id="skip" onclick="skip()" class="interviewBtn questionBtn">Skip</button>
                     <button id="restart" onclick="restart()" class="interviewBtn questionBtn">Restart</button>
-                    <button id="next" onclick="nextQuest()" class="interviewBtn questionBtn">Next</button>
+                    <button id="next" onclick="nextQuest()" class="interviewBtn questionBtn">Next </button>
                     <button id="save-recording" class="interviewBtn questionBtn">Finish and Save</button>
                 </div>
                 <!-- About Content End -->
