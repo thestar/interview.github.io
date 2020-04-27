@@ -6,7 +6,7 @@
     -----------------------------------*/
     var successLogin = localStorage.getItem('successLogin')?localStorage.getItem('successLogin'):false;
     if(successLogin){
-         var account = '<span>My Account / Sign out</span>';
+         var account = '<span>My Account</span>';
         console.log(account)
     }
    
@@ -343,7 +343,7 @@
         if(passworda!=passwordb){
             alert('Please input the right password!')
         }else{
-             var account = '<span>My Account / Sign out</span>';
+             var account = '<span>My Account / <span class="signOut">Sign00 out</span></span>';
              console.log(account)
              $('.header-links').html(account);       
              successLogin = true;
@@ -351,6 +351,9 @@
         }
     })
 
+    $(".signOut").on("click",function(){
+        console.log(888)
+    })
      $('.signup').click(function(){
         alert('Sign up successfully!')
      })
