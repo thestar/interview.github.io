@@ -597,15 +597,15 @@ if(istyrInterview == true){
 
 function startRecord() {
     mediaRecorder.start();
-    setTimeout(function(){
+    // setTimeout(function(){
         // 结束
-        stopRecord(function() {
-            alert("Time out!Recording successful!");
-            openBtn.disabled=false;
-            saveBtn.disabled=false;
-            //send();
-        });
-    }, 10000);
+        // stopRecord(function() {
+        //     alert("Time out!Recording successful!");
+        //     openBtn.disabled=false;
+        //     saveBtn.disabled=false;
+        //     //send();
+        // });
+    // }, 10000);
 }
 
 function saver(){
