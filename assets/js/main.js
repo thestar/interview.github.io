@@ -4,16 +4,37 @@
     /*--
         Commons Variables
     -----------------------------------*/
-    var successLogin = localStorage.getItem('successLogin')?localStorage.getItem('successLogin'):false;
-    if(successLogin){
-         var account = '<span>My Account</span>';
-        console.log(account)
+    let successLogin = localStorage.getItem('successLogin')?localStorage.getItem('successLogin'):0;
+    console.log(successLogin,'successLogin222');
+
+    if(successLogin==1){
+         $('.loginOutLink').removeClass('none').addClass('block');
+         $('.loginLink').removeClass('block').addClass('none');
+         console.log('true')
+        // var account = '<span>My Account / <span class="signOut">Sign out</span></span>';
+         
     }
+    else{
+        $('.loginLink').removeClass('none').addClass('block');
+        $('.loginOutLink').removeClass('block').addClass('none');
+        console.log('false');
+
+    }
+
+    $(".signOut").on("click",function(){
+            successLogin = 0; 
+
+            $('.loginLink').removeClass('none').addClass('block');
+            $('.loginOutLink').removeClass('block').addClass('none');
+            localStorage.setItem("successLogin",successLogin);
+            console.log('234') 
+             // window.location.reload();
+        })
    
-    $('.header-links').html(account); 
+    // $('.header-links').html(account); 
 
     $('.isLoginTip').click(function(){
-        if(successLogin){
+        if(successLogin==1){
             window.location="blog.html"
         }else{
             alert('Please login firstly')
@@ -21,14 +42,14 @@
     })
 
     $('.isLoginTrial').click(function(){
-        if(successLogin){
+        if(successLogin==1){
             window.location="interview.html"
         }else{
             alert('Please login firstly')
         }
     })
     $('.isLoginWatch').click(function(){
-        if(successLogin){
+        if(successLogin==1){
             window.location="watchInterview.html"
         }else{
             alert('Please login firstly')
@@ -330,29 +351,32 @@
         Ajax Contact Form
     -----------------------------------*/
     $('.goInterview').click(function(){
-        if(successLogin == false){
+        if(successLogin == 0){
             alert('Please login first!')
         }else{
             window.location='interview.html';
         }
     })
     $('.loginBtn').click(function(){
-        console.log(999)
         var passworda = $('password').val();
         var passwordb = $('repeatPassword').val();
         if(passworda!=passwordb){
             alert('Please input the right password!')
         }else{
-             var account = '<span>My Account / <span class="signOut">Sign00 out</span></span>';
-             console.log(account)
-             $('.header-links').html(account);       
-             successLogin = true;
+            $('.loginOutLink').removeClass('none').addClass('block');
+            $('.loginLink').removeClass('block').addClass('none');
+             window.location.reload();
+             successLogin = 1;
             localStorage.setItem("successLogin",successLogin);
         }
     })
 
     $(".signOut").on("click",function(){
-        console.log(888)
+         successLogin = 0;
+         $('.loginOutLink').removeClass('block').addClass('none');
+         $('.loginLink').removeClass('none').addClass('block');
+          localStorage.setItem("successLogin",successLogin);
+         window.location.reload();
     })
      $('.signup').click(function(){
         alert('Sign up successfully!')

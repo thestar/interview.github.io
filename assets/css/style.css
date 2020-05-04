@@ -3369,7 +3369,7 @@ body.offcanvas-open {
 }
 
 .none{
-  display: none;
+  display: none !important;
 }
 
 .block{

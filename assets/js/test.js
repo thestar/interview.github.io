@@ -229,6 +229,7 @@ var num = 1;
 // 初始化标题，即用户所选的岗位，默认为空字符串
 var time ='';
 var title = '';
+var stop = 0;
 
 // 当用户选择岗位角色值有变时，触发该函数，并获取当前所选值
 $('.positionSelected').change(function(){
@@ -306,15 +307,20 @@ function skip(){
             console.log('finish')
             alert('This is the last question!')
         }
+        Time = 180;
+    int = null;
+    timer();
         return;
     }
 };
 
-        var Time = 180;
-        var int = null;
-        var $time = $('.time');
+        let Time = 180;
+        let int = null;
+        let $time = $('.time');
 
-        function timer() {
+        function timer() { 
+            if(stop== 0){
+                 console.log(222,'timer')
             Time--;
             if (Time == 0) {
                Time =180;
@@ -339,6 +345,9 @@ function skip(){
             seconds = checkTime(seconds);
 
             $time.html(minutes + ':' + seconds);
+        }else{
+            window.clearTimeout(int);  
+        }
         }
        
 
@@ -349,6 +358,10 @@ function restart (){
     var html = '<div class="about-content"><h3 class="title">'+title+'</h3><p>'+'1.'+commonList[1].text+'</p>';
     $(".answerArea").html('');
     $(".answerArea").append(html);
+    Time = 180;
+    int = null;
+    timer();
+
 };
 
 setInterval(function working(){
@@ -357,15 +370,31 @@ setInterval(function working(){
 
 function nextQuest(){
     for(num<commonList.length+1;num++;){
-        console.log(num,'time')
-        console.log(commonList,'commonList')
+        console.log(num,'num')
+        if(num<commonList.length){
+           console.log(commonList.length,'commonList.length')
         var html = '<div class="about-content"><h3 class="title">'+title+'</h3><p>'+num+'.'+commonList[num].text+'</p>';
         $(".answerArea").html('');
         $(".answerArea").append(html);
-        return;
+        Time = 180;
+        int = null;
+         timer();
+         console.log('next');
+         window.clearTimeout(int);  
+        return 
+    }else{
+        stop = 1;
+        window.clearTimeout(int); 
+        alert('This is the last question!');   
+        return 
     }
+        
+    }
+     // const Time = 180;
+     // const int = null;
+     // const $time = $('.time');
+   
 };
-
 
 function finishQuest(){
     if(num<commonList.length){
